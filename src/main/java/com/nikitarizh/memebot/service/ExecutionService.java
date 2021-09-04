@@ -20,7 +20,7 @@ public class ExecutionService {
         try {
             actionDispatcherService.getActionForCommand(messageText).act(update, botRequest);
         } catch (NoActionException e) {
-            actionDispatcherService.getActionForCommand("help").act(update, botRequest);
+            actionDispatcherService.getActionForCommand("/help").act(update, botRequest);
         } catch (Exception e) {
             log.error("Error occurred while execution", e);
             actionDispatcherService.getActionForCommand("error").act(update, botRequest);
