@@ -1,4 +1,4 @@
-package com.nikitarizh.memebot.entity;
+package com.nikitarizh.memebot.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -8,6 +8,6 @@ import lombok.Data;
 @Data
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class MemeResponse {
+public class MemeResponseDTO {
     private String url;
 }
