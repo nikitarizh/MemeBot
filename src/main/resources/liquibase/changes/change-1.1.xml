@@ -1,0 +1,28 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.1.0" author="nikita">
+        <addColumn tableName="users">
+            <column name="created_date" type="timestamp">
+            </column>
+        </addColumn>
+
+        <addColumn tableName="bot_requests">
+            <column name="created_date" type="timestamp">
+            </column>
+        </addColumn>
+
+        <addColumn tableName="bot_responses">
+            <column name="created_date" type="timestamp">
+            </column>
+        </addColumn>
+
+        <addColumn tableName="bot_responses">
+            <column name="updated_date" type="timestamp">
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

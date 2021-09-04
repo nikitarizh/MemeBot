@@ -1,0 +1,43 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                           http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet id="1.0.0" author="nikita">
+        <sql>
+            create table if not exists users
+            (
+                id          integer not null auto_increment,
+                telegram_id bigint  not null,
+                primary key (id)
+            );
+        </sql>
+
+        <sql>
+            create table if not exists bot_requests
+            (
+                id      bigint       not null auto_increment primary key,
+                request VARCHAR(100) not null,
+                user_id integer      not null,
+                constraint FK_user_bot_request
+                    foreign key (user_id) references users (id)
+            );
+        </sql>
+
+        <sql>
+            create table if not exists bot_responses
+            (
+                id              bigint      not null auto_increment primary key,
+                response_text   TEXT        not null,
+                response_status VARCHAR(20) not null,
+                request_id      bigint,
+                constraint FK_bot_request_bot_response
+                    foreign key (request_id) references bot_requests (id),
+                user_id         integer     not null,
+                constraint FK_user_bot_response
+                    foreign key (user_id) references users (id)
+            );
+        </sql>
+    </changeSet>
+</databaseChangeLog>
