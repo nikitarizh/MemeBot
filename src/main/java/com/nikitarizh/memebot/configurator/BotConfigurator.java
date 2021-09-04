@@ -1,7 +1,7 @@
 package com.nikitarizh.memebot.configurator;
 
-import com.nikitarizh.memebot.service.ExecutionService;
-import com.pengrad.telegrambot.TelegramBot;
+import com.nikitarizh.memebot.service.GatewayService;
+import com.pengrad.telegrambot.MemeBot;
 import com.pengrad.telegrambot.UpdatesListener;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -12,10 +12,10 @@ import javax.annotation.PostConstruct;
 @Component
 @RequiredArgsConstructor
 @Slf4j
-public class TelegramBotConfigurator {
+public class MemeBotConfigurator {
 
-    private final ExecutionService service;
-    private final TelegramBot bot;
+    private final GatewayService service;
+    private final MemeBot bot;
 
     @PostConstruct
     public void initBot() {
