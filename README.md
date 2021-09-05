@@ -1,8 +1,15 @@
 # MEME BOT
 > *wow, it sends memes*
+***
 ## What is it?
 Basically one of thousands telegram bots, but it's mine
+***
 ## How to use?
+Basically the latest version is available at https://t.me/alldayMemeBot  
+***
+## Self-hosting
+But if you want to self-host it for some reason, here's how to do it:
+
 1. Download latest release from Releases tab
 2. Launch a MySQL database instance
 3. Launch with env variables:
