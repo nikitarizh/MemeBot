@@ -5,7 +5,7 @@
 Basically one of thousands telegram bots, but it's mine
 ***
 ## How to use?
-Basically the latest version is available at https://t.me/alldayMemeBot  
+The latest version is available at https://t.me/alldayMemeBot  
 ***
 ## Self-hosting
 But if you want to self-host it for some reason, here's how to do it:
