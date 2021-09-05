@@ -5,6 +5,7 @@ import com.nikitarizh.memebot.entity.MemeBot;
 import com.nikitarizh.memebot.entity.UserResponse;
 import com.nikitarizh.memebot.service.MemeService;
 import com.pengrad.telegrambot.model.Update;
+import com.pengrad.telegrambot.model.request.ReplyKeyboardMarkup;
 import com.pengrad.telegrambot.request.SendPhoto;
 import com.pengrad.telegrambot.response.SendResponse;
 import lombok.RequiredArgsConstructor;
@@ -18,12 +19,13 @@ public class MemeAction implements Action {
 
     private final MemeService memeService;
     private final MemeBot bot;
+    private final ReplyKeyboardMarkup markup;
 
     @Override
     public SendResponse act(Update update, BotRequestEntity botRequest) {
         var memeUrl = memeService.getMemeUrl();
         var response = new UserResponse(memeService.getMemeUrl());
-        var messageRequest = new SendPhoto(update.message().chat().id(), memeUrl);
+        var messageRequest = new SendPhoto(update.message().chat().id(), memeUrl).replyMarkup(markup);
         return bot.execute(messageRequest, response, botRequest);
     }
 
