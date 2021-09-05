@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.nikitarizh</groupId>
     <artifactId>tg-meme-bot</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <name>tg-meme-bot</name>
     <description>tg meme bot</description>
     <properties>
